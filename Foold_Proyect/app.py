@@ -18,6 +18,13 @@ app = Flask(__name__)
 mapa = crear_mapa()
 
 @app.route("/")
+def home():
+    return "Hola desde Flask en Vercel"
+
+# IMPORTANTE para Vercel
+app = app
+
+@app.route("/")
 def inicio():
     return render_template("index.html")
 
